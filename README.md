@@ -5,4 +5,4 @@ based off projects found in [florinpop17/app-ideas](https://github.com/florinpop
 
 ## Beginner Tier
  - [ ] [bin2dec]()
- - [ ] Calculator
+ - [ ] Calculator -- In Development
