@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Binary to Decimal Converter{% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='pages/bin2dec.css') }}">
+{% endblock %}
+{% block content %}
+<div class="container">
+    <a href="{{ url_for('homepage') }}" class="back-link" onclick="return trackBackToHome(event);">← Back to Home</a>
+    <h1>Binary to Decimal Converter</h1>
+
+    <div class="form-container">
+        <form method="post" action="/bin2dec">
+            <label for="bin_num">Enter Binary Number</label>
+            <input type="text" id="bin_num" name="bin_num" placeholder="{{ bin_num }}">
+            <input type="submit" value="Convert">
+        </form>
+    </div>
+
+    {% if decimal_num is defined %}
+    <div class="result-container">
+        <!-- <h2>Binary: {{ bin_num }}</h2> -->
+        <h2>Decimal: {{ decimal_num }}</h2>
+    </div>
+    {% endif %}
+
+    {% if error_message is defined %}
+    <div class="error-message">
+        <h2>{{ error_message }}</h2>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %} HMBaytam Portfolio {% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='pages/home.css') }}">
+{% endblock %}
+{% block content %}
+<header class="portfolio-header">
+  <h1>HMBaytam Portfolio</h1>
+  <p class="subtitle">Software Engineer & Developer</p>
+</header>
+
+<main class="projects-container">
+  <h2 class="section-title">Projects</h2>
+  <ul>
+    {% for url, endpoint in links %}
+    {% if endpoint != 'homepage' %}
+    <li data-endpoint="{{ endpoint }}">
+      <a href="{{ url }}" onclick="return trackProjectClick('{{ endpoint }}', '{{ url }}', event);">
+        <span>→</span>
+      </a>
+    </li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+</main>
+
+<footer class="portfolio-footer">
+  <p>&copy; 2025 HMBaytam. Built with Flask.</p>
+</footer>
+{% endblock %}

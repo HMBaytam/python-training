@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Calculator{% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='pages/calculator.css') }}">
+{% endblock %}
+{% block content %}
+<div class="container">
+    <a href="{{ url_for('homepage') }}" class="back-link" onclick="return trackBackToHome(event);">← Back to Home</a>
+    <h1>Calculator App</h1>
+</div>
+{% endblock %}

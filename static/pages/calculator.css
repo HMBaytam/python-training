@@ -1,0 +1,136 @@
+/* ==========================================================================
+   Calculator - Page Layout
+   ========================================================================== */
+
+/* Page Layout */
+body {
+    background: linear-gradient(135deg, var(--color-dark-bg) 0%, var(--color-dark-bg-secondary) 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Main Container */
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-2xl);
+    box-shadow: var(--shadow-xl);
+    max-width: 400px;
+    width: 100%;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.container h1 {
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    font-size: 28px;
+    font-weight: var(--font-weight-semibold);
+}
+
+/* Calculator Display */
+.calculator-display {
+    background: var(--color-light-text);
+    color: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-xl);
+    font-family: var(--font-family-mono);
+    text-align: right;
+    margin-bottom: var(--spacing-lg);
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+/* Calculator Buttons Grid */
+.calculator-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-sm);
+}
+
+.calculator-buttons button {
+    padding: var(--spacing-lg);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-semibold);
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    background: var(--color-light-bg);
+    color: var(--color-light-text);
+}
+
+.calculator-buttons button:hover {
+    background: var(--color-light-border);
+    transform: translateY(-2px);
+}
+
+.calculator-buttons button:active {
+    transform: translateY(0);
+}
+
+/* Number Buttons */
+.calculator-buttons button.number {
+    background: white;
+}
+
+/* Operator Buttons */
+.calculator-buttons button.operator {
+    background: var(--color-primary);
+    color: white;
+}
+
+.calculator-buttons button.operator:hover {
+    background: var(--color-primary-dark);
+}
+
+/* Equal Button */
+.calculator-buttons button.equal {
+    background: var(--color-success);
+    color: white;
+    grid-column: span 2;
+}
+
+.calculator-buttons button.equal:hover {
+    background: #45b657;
+}
+
+/* Clear Button */
+.calculator-buttons button.clear {
+    background: var(--color-error);
+    color: white;
+    grid-column: span 2;
+}
+
+.calculator-buttons button.clear:hover {
+    background: var(--color-error-dark);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .container {
+        padding: var(--spacing-lg);
+    }
+
+    .container h1 {
+        font-size: 24px;
+    }
+
+    .calculator-display {
+        font-size: var(--font-size-lg);
+        padding: var(--spacing-md);
+    }
+
+    .calculator-buttons button {
+        padding: var(--spacing-md);
+        font-size: var(--font-size-sm);
+    }
+}
